@@ -1,0 +1,34 @@
+{
+  "name": "@repo/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "library.js",
+    "next.js",
+    "react-internal.js",
+    "import-order.js"
+  ],
+  "devDependencies": {
+    "@eslint/eslintrc": "^2.1.4",
+    "@eslint/js": "^8.56.0",
+    "@types/node": "catalog:",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "commitizen": "^4.3.1",
+    "eslint": "catalog:",
+    "eslint-config-next": "^15.1.7",
+    "eslint-import-resolver-typescript": "^3.8.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.15.0",
+    "postcss": "^8",
+    "tailwindcss": "catalog:",
+    "typescript-eslint": "^8.24.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "@vercel/style-guide": "^6.0.0",
+    "eslint-config-turbo": "2.1.1",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "typescript": "catalog:"
+  }
+}
