@@ -19,3 +19,8 @@ catalog:
   '@types/react-dom': ^19.0.4
   '@next/eslint-plugin-next': 14.2.8
   'postcss-load-config': ^4.0.0
+  '@radix-ui/react-accordion': ^1.2.3
+  '@radix-ui/react-slot': ^1.0.2
+  'class-variance-authority': ^0.7.0
+  'clsx': ^2.1.1
+  'tailwind-merge': ^2.3.0

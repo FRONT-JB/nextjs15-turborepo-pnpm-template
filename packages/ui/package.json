@@ -10,7 +10,13 @@
     "prebuild": "node scripts/generate-package-exports.js"
   },
   "peerDependencies": {
-    "react": "catalog:"
+    "react": "catalog:",
+    "@radix-ui/react-accordion": "catalog:",
+    "@radix-ui/react-slot": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "lucide-react": "catalog:",
+    "tailwind-merge": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -28,12 +34,6 @@
     "typescript": "catalog:"
   },
   "dependencies": {
-    "@radix-ui/react-accordion": "^1.2.3",
-    "@radix-ui/react-slot": "^1.0.2",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "lucide-react": "catalog:",
-    "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "type": "module",
