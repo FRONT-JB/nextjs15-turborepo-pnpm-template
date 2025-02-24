@@ -5,7 +5,7 @@
   "scripts": {
     "shadcn": "pnpm dlx shadcn@latest",
     "lint": "eslint .",
-    "build": "rollup --config",
+    "build": "rm -rf dist && rollup --config",
     "dev": "pnpm build --watch",
     "prebuild": "node scripts/generate-package-exports.js"
   },
@@ -58,5 +58,6 @@
       "import": "./dist/accordion.mjs",
       "require": "./dist/accordion.cjs"
     }
-  }
+  },
+  "sideEffects": false
 }

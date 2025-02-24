@@ -8,9 +8,10 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@ui": ["../../packages/ui/dist"],
-      "@ui/*": ["../../packages/ui/dist/*"]
-    }
+      "@repo/ui": ["../../packages/ui/dist"],
+      "@repo/ui/*": ["../../packages/ui/dist/*"]
+    },
+    "baseUrl": "."
   },
   "include": [
     "next-env.d.ts",
