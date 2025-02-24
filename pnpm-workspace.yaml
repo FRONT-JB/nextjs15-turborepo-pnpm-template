@@ -8,5 +8,14 @@ catalog:
   eslint: ^8.57.0
   prettier: ^3.2.5
   typescript: ^5.3.3
-  '@types/node': ^20.11.24
+  postcss: ^8
+  autoprefixer: ^10
+  next: 15.1.7
+  react: ^19.0.0
+  react-dom: ^19.0.0
+  '@types/node': ^22.13.4
   '@types/eslint': ^8.56.2
+  '@types/react': ^19.0.10
+  '@types/react-dom': ^19.0.4
+  '@next/eslint-plugin-next': 14.2.8
+  'postcss-load-config': ^4.0.0

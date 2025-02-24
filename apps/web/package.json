@@ -10,21 +10,21 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
-    "next": "15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@next/eslint-plugin-next": "14.2.8",
+    "@next/eslint-plugin-next": "catalog:",
     "@types/eslint": "catalog:",
     "@types/node": "catalog:",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "autoprefixer": "^10",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "autoprefixer": "catalog:",
     "eslint": "catalog:",
-    "postcss": "^8",
+    "postcss": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   }

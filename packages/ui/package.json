@@ -7,16 +7,16 @@
     "lint": "eslint ."
   },
   "peerDependencies": {
-    "react": "^18"
+    "react": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^22.13.4",
-    "@types/react": "^19.0.10",
-    "autoprefixer": "^10",
-    "postcss": "^8",
-    "postcss-load-config": "^6",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "autoprefixer": "catalog:",
+    "postcss": "catalog:",
+    "postcss-load-config": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
