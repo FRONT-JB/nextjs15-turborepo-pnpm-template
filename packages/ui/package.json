@@ -6,7 +6,8 @@
     "shadcn": "pnpm dlx shadcn@latest",
     "lint": "eslint .",
     "build": "rollup --config",
-    "dev": "pnpm build --watch"
+    "dev": "pnpm build --watch",
+    "prebuild": "node scripts/generate-package-exports.js"
   },
   "peerDependencies": {
     "react": "catalog:"
@@ -19,6 +20,7 @@
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "autoprefixer": "catalog:",
+    "glob": "^11.0.1",
     "postcss": "catalog:",
     "postcss-load-config": "catalog:",
     "rollup": "^4.34.8",
@@ -34,22 +36,27 @@
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
+  "type": "module",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
     },
+    "./postcss.config": "./postcss.config.mjs",
     "./styles.css": "./src/globals.css",
-    "./Button": {
-      "types": "./dist/components/button.d.ts",
-      "default": "./dist/components/button.js"
-    },
     "./lib/utils": {
       "types": "./dist/lib/utils.d.ts",
       "default": "./dist/lib/utils.js"
     },
-    "./postcss.config": "./postcss.config.mjs",
-    "./tailwind.config": "./tailwind.config.ts"
-  },
-  "type": "module"
+    "./tailwind.config": "./tailwind.config.ts",
+    "./components/button": {
+      "import": "./dist/button.mjs",
+      "require": "./dist/button.cjs"
+    },
+    "./components/accordion": {
+      "import": "./dist/accordion.mjs",
+      "require": "./dist/accordion.cjs"
+    }
+  }
 }
