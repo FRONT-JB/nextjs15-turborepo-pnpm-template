@@ -1,57 +1,29 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  plugins: ['import'],
+  plugins: ['simple-import-sort', 'import'],
   rules: {
-    'import/order': [
+    'simple-import-sort/imports': [
       'error',
       {
         groups: [
-          'builtin', // Node.js 내장 모듈
-          'external', // npm 패키지
-          'internal', // 프로젝트 내부 모듈
-          ['parent', 'sibling'], // 상위 및 형제 디렉토리
-          'index', // 현재 디렉토리
-          'object', // object-imports
-          'type', // type imports
+          // React and Next related packages come first
+          ['^react$', '^next'],
+          // Internal packages with @
+          ['^@'],
+          // Other external packages
+          ['^[a-z]'],
+          // Parent imports
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          // Other relative imports
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          // Style imports
+          ['^.+\\.s?css$'],
+          // Side effect imports
+          ['^\\u0000'],
         ],
-        'newlines-between': 'always',
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-        // ... existing code ...
-        pathGroups: [
-          {
-            pattern: 'react',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: 'next',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: 'next/**',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: '@repo/**',
-            group: 'internal',
-            position: 'before',
-          },
-          {
-            pattern: '@/*',
-            group: 'internal',
-            position: 'after',
-          },
-        ],
-        // ... existing code ...
-        pathGroupsExcludedImportTypes: ['react'],
-        distinctGroup: false,
       },
     ],
+    'simple-import-sort/exports': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
   },

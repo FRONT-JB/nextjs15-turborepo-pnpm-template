@@ -5,7 +5,6 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: ['eslint:recommended', 'turbo', './import-order.js'],
-  plugins: ['only-warn'],
   globals: {
     React: true,
     JSX: true,
