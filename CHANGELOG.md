@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/FRONT-JB/nextjs15-turborepo-pnpm-template/compare/v1.0.1...v1.0.2) (2025-03-01)
+
+
+### Other Changes
+
+* import/order 설정 변경 ([af05932](https://github.com/FRONT-JB/nextjs15-turborepo-pnpm-template/commit/af059321cb75a53e4879a91be2a37992645765bb))
+
 ## [1.0.1](https://github.com/FRONT-JB/nextjs15-turborepo-pnpm-template/compare/v1.0.0...v1.0.1) (2025-02-24)
 
 
