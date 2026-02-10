@@ -1,34 +1,43 @@
-const { resolve } = require('node:path');
+import js from '@eslint/js';
+import nextPlugin from '@next/eslint-plugin-next/dist/index.js';
+import turboPlugin from 'eslint-config-turbo/flat';
+import tseslint from 'typescript-eslint';
+import importOrderConfig from './import-order.js';
 
-const project = resolve(process.cwd(), 'tsconfig.json');
-
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
-  extends: [
-    'eslint:recommended',
-    require.resolve('@vercel/style-guide/eslint/next'),
-    'turbo',
-    './import-order.js',
-  ],
-  globals: {
-    React: true,
-    JSX: true,
+/** @type {import("eslint").Linter.Config[]} */
+export default [
+  js.configs.recommended,
+  ...turboPlugin,
+  ...importOrderConfig,
+  ...tseslint.configs.recommended,
+  {
+    plugins: {
+      '@next/next': nextPlugin,
+    },
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+    },
   },
-  env: {
-    node: true,
-    browser: true,
-  },
-  settings: {
-    'import/resolver': {
-      typescript: {
-        project,
+  {
+    languageOptions: {
+      globals: {
+        React: 'readonly',
+        JSX: 'readonly',
+      },
+      parserOptions: {
+        projectService: true,
+      },
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+        },
       },
     },
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    '.*.js',
-    'node_modules/',
-  ],
-  overrides: [{ files: ['*.js?(x)', '*.ts?(x)'] }],
-};
+  {
+    ignores: ['.*.js', 'node_modules/', '.next/'],
+  },
+];

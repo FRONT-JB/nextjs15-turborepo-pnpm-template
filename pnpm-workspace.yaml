@@ -3,24 +3,25 @@ packages:
   - 'packages/*'
 
 catalog:
-  lucide-react: ^0.294.0
-  tailwindcss: ^3.4.1
-  eslint: ^8.57.0
-  prettier: ^3.2.5
-  typescript: ^5.3.3
+  lucide-react: ^0.563.0
+  tailwindcss: ^4.1.18
+  eslint: ^9.39.2
+  prettier: ^3.8.1
+  typescript: ^5.9.3
   postcss: ^8
   autoprefixer: ^10
-  next: 15.1.7
+  next: 16.1.6
   react: ^19.0.0
   react-dom: ^19.0.0
-  '@types/node': ^22.13.4
-  '@types/eslint': ^8.56.2
-  '@types/react': ^19.0.10
-  '@types/react-dom': ^19.0.4
-  '@next/eslint-plugin-next': 14.2.8
-  'postcss-load-config': ^4.0.0
-  '@radix-ui/react-accordion': ^1.2.3
-  '@radix-ui/react-slot': ^1.0.2
-  'class-variance-authority': ^0.7.0
+  '@types/node': ^25.2.3
+  '@types/eslint': ^9.6.1
+  '@types/react': ^19.2.13
+  '@types/react-dom': ^19.2.3
+  '@next/eslint-plugin-next': 16.1.6
+  '@tailwindcss/postcss': ^4.1.18
+  'postcss-load-config': ^6.0.1
+  '@radix-ui/react-accordion': ^1.2.12
+  '@radix-ui/react-slot': ^1.2.4
+  'class-variance-authority': ^0.7.1
   'clsx': ^2.1.1
-  'tailwind-merge': ^2.3.0
+  'tailwind-merge': ^3.4.0

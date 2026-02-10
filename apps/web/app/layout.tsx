@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import '@repo/ui/styles.css';
-
 const inter = Inter({ subsets: ['latin'] });
+
+import '@repo/ui/styles.css';
 
 export const metadata: Metadata = {
   title: 'Web',

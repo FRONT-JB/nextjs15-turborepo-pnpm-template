@@ -2,6 +2,7 @@
   "name": "@repo/web",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,10 +16,10 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.1.7",
+    "@next/bundle-analyzer": "^16.1.6",
+    "@next/eslint-plugin-next": "catalog:",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@next/eslint-plugin-next": "catalog:",
     "@types/eslint": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",

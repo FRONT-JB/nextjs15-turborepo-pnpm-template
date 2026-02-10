@@ -1,33 +1,33 @@
-const { resolve } = require('node:path');
+import js from '@eslint/js';
+import turboPlugin from 'eslint-config-turbo/flat';
+import tseslint from 'typescript-eslint';
+import importOrderConfig from './import-order.js';
 
-const project = resolve(process.cwd(), 'tsconfig.json');
-
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
-  extends: ['eslint:recommended', 'turbo', './import-order.js'],
-  globals: {
-    React: true,
-    JSX: true,
-  },
-  env: {
-    node: true,
-  },
-  settings: {
-    'import/resolver': {
-      typescript: {
-        project,
+/** @type {import("eslint").Linter.Config[]} */
+export default [
+  js.configs.recommended,
+  ...turboPlugin,
+  ...importOrderConfig,
+  ...tseslint.configs.recommended,
+  {
+    languageOptions: {
+      globals: {
+        React: 'readonly',
+        JSX: 'readonly',
+      },
+      parserOptions: {
+        projectService: true,
+      },
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+        },
       },
     },
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    '.*.js',
-    'node_modules/',
-    'dist/',
-  ],
-  overrides: [
-    {
-      files: ['*.js?(x)', '*.ts?(x)'],
-    },
-  ],
-};
+  {
+    ignores: ['.*.js', 'node_modules/', 'dist/'],
+  },
+];

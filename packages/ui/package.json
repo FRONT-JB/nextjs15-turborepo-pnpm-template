@@ -6,30 +6,30 @@
     "shadcn": "pnpm dlx shadcn@latest",
     "lint": "eslint .",
     "build": "rm -rf dist && rollup --config",
-    "dev": "pnpm build --watch",
-    "prebuild": "node scripts/generate-package-exports.js"
+    "dev": "pnpm build --watch"
   },
   "peerDependencies": {
-    "react": "catalog:",
     "@radix-ui/react-accordion": "catalog:",
     "@radix-ui/react-slot": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "lucide-react": "catalog:",
+    "react": "catalog:",
     "tailwind-merge": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@rollup/plugin-replace": "^6.0.2",
-    "@rollup/plugin-typescript": "^12.1.2",
+    "eslint": "catalog:",
+    "@rollup/plugin-replace": "^6.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@tailwindcss/postcss": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "autoprefixer": "catalog:",
-    "glob": "^11.0.1",
     "postcss": "catalog:",
     "postcss-load-config": "catalog:",
-    "rollup": "^4.34.8",
+    "rollup": "^4.57.1",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
@@ -40,24 +40,12 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     },
     "./postcss.config": "./postcss.config.mjs",
     "./styles.css": "./src/globals.css",
-    "./lib/utils": {
-      "types": "./dist/lib/utils.d.ts",
-      "default": "./dist/lib/utils.js"
-    },
-    "./tailwind.config": "./tailwind.config.ts",
-    "./components/button": {
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.cjs"
-    },
-    "./components/accordion": {
-      "import": "./dist/accordion.mjs",
-      "require": "./dist/accordion.cjs"
-    }
+    "./tailwind.config": "./tailwind.config.ts"
   },
   "sideEffects": false
 }

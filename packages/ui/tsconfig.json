@@ -3,14 +3,17 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@it-diots/ui/*": ["./src/*"]
+      "@repo/ui/*": ["./src/*"],
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"]
     },
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "declaration": true,
     "declarationDir": "dist",
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "allowImportingTsExtensions": false
   },
   "include": ["src"],
   "exclude": ["dist", "build", "node_modules"]
